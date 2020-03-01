@@ -11,6 +11,11 @@ async function main() {
     const canvas = document.querySelector("canvas#view");
     const context = canvas.getContext("2d");
 
+    const { clientHeight, clientWidth } = canvas;
+    canvas.height = clientHeight;
+    canvas.width = clientWidth;
+    console.log(canvas);
+
     const camera = new Camera({ position: new Vec2(2, 2) });
     const game = new Game({ world: await world });
 
